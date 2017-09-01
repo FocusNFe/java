@@ -12,7 +12,7 @@ public class Main {
 
 		String token =  "token_enviado_pelo_suporte";
 
-		// Substituir pela sua identificação interna da nota
+		// Substituir pela sua identificação interna da nota.
 		String ref = "12345";
 
 		String justificativa = "Teste_de_cancelamento_de_nota";

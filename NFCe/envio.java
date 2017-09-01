@@ -24,7 +24,7 @@ public class Main {
 
 		String url = server.concat("nfce.json?token="+ token +"&ref="+ ref);
 		
-		// Criamos aqui as hash que receberam os dados da nota.
+		// Criamos aqui as hash que receberão os dados da nota.
 		HashMap<String, String> nfce = new HashMap<String, String>();
 		HashMap<String, String> itens = new HashMap<String, String>();
 		HashMap<String, String> formasPagamento = new HashMap<String, String>();
@@ -79,7 +79,7 @@ public class Main {
 		JSONObject JsonItens = new JSONObject (itens);
 		JSONObject JsonPagamento = new JSONObject (formasPagamento);
 		
-		// Aqui adicionamos estes campos como Array JSON no objeto JSON principal.
+		// Aqui adicionamos estes campos como array JSON no objeto JSON principal.
 		json.append("items", JsonItens);
 		json.append("formas_pagamento", JsonPagamento);
 
@@ -94,8 +94,7 @@ public class Main {
 
 		String body = resposta.getEntity(String.class);
 
-		/* As três linhas abaixo imprimem as informações retornadas pela API, aqui o seu sistema deverá 
-		   interpretar e lidar com o retorno*/
+		/* As três linhas abaixo imprimem as informações retornadas pela API, aqui o seu sistema deverá interpretar e lidar com o retorno*/
 		System.out.print("HTTP Code: ");
 		System.out.print(HttpCode);
 		System.out.printf(body);
