@@ -79,7 +79,7 @@ public class Main {
 		JSONObject JsonItens = new JSONObject (itens);
 		JSONObject JsonPagamento = new JSONObject (formasPagamento);
 		
-		// Aqui adicionamos estes campos como array JSON no objeto JSON principal.
+		// Aqui adicionamos estes campos como array no JSON principal.
 		json.append("items", JsonItens);
 		json.append("formas_pagamento", JsonPagamento);
 
