@@ -17,14 +17,14 @@ public class Main {
 
 		String token =  "Token_enviado_pelo_suporte";
 
-		// Substituir pela sua identificação interna da nota.
+		/* Substituir pela sua identificação interna da nota. */
 		String ref = "12345";
 
 		Client client = Client.create();
 
 		String url = server.concat("nfce.json?token="+ token +"&ref="+ ref);
 		
-		// Criamos aqui as hash que receberão os dados da nota.
+		/* Aqui são criados as hash's que receberão os dados da nota. */
 		HashMap<String, String> nfce = new HashMap<String, String>();
 		HashMap<String, String> itens = new HashMap<String, String>();
 		HashMap<String, String> formasPagamento = new HashMap<String, String>();
@@ -74,27 +74,28 @@ public class Main {
 		formasPagamento.put("forma_pagamento", "99");
 		formasPagamento.put("valor_pagamento", "1.0000");
 		
-		// Depois de fazer o input dos dados, criamos os objetos JSON com os valores das Hash's.
+		/* Depois de fazer o input dos dados, são criados os objetos JSON já com os valores das hash's. */
 		JSONObject json = new JSONObject (nfce);
 		JSONObject JsonItens = new JSONObject (itens);
 		JSONObject JsonPagamento = new JSONObject (formasPagamento);
 		
-		// Aqui adicionamos estes campos como array no JSON principal.
+		/* Aqui adicionamos os objetos JSON nos campos da API como array no JSON principal. */
 		json.append("items", JsonItens);
 		json.append("formas_pagamento", JsonPagamento);
 
-		/* Recomendamos que verifique como os dados estão sendo codificados, antes de realizar o envio.
+		/* É recomendado verificar como os dados foram gerados em JSON e se ele está seguindo a estrutura especificada em nossa documentação.
 		System.out.print(json); */
 
 		WebResource request = client.resource(url);
 
-		ClientResponse resposta = request.accept(MediaType.APPLICATION_JSON).post(ClientResponse.class, json);
+		ClientResponse resposta = requestpost(ClientResponse.class, json);
 
 		int HttpCode = resposta.getStatus(); 
 
 		String body = resposta.getEntity(String.class);
 
-		/* As três linhas abaixo imprimem as informações retornadas pela API, aqui o seu sistema deverá interpretar e lidar com o retorno*/
+		/* As três linhas a seguir exibem as informações retornadas pela nossa API. 
+		 * Aqui o seu sistema deverá interpretar e lidar com o retorno. */
 		System.out.print("HTTP Code: ");
 		System.out.print(HttpCode);
 		System.out.printf(body);

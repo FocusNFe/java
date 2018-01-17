@@ -7,14 +7,13 @@ public class Main {
 	public static void main(String[] args){
 
 		/* Para ambiente de produção use a variável abaixo:
-
 		String server = "https://api.focusnfe.com.br/"; */
 
 		String server = "http://homologacao.acrasnfe.acras.com.br/";
 
 		String token =  "token_enviado_pelo_suporte ";
 
-		// Substituir pela sua identificação interna da nota.
+		/* Substituir pela sua identificação interna da nota. */
 		String ref = "12345";
 
 		Client client = Client.create();
@@ -29,8 +28,8 @@ public class Main {
 
 		String body = resposta.getEntity(String.class);
 
-		/* As três linhas abaixo imprimem as informações retornadas pela API, aqui o seu sistema deverá 
-		   interpretar e lidar com o retorno*/
+		/* As três linhas abaixo imprimem as informações retornadas pela API. 
+		 * Aqui o seu sistema deverá interpretar e lidar com o retorno. */
 		System.out.print("HTTP Code: ");
 		System.out.print(HttpCode);
 		System.out.printf(body);
