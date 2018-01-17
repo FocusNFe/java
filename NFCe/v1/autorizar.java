@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import javax.ws.rs.core.MediaType;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import com.sun.jersey.api.client.Client;
