@@ -1,7 +1,4 @@
-package v2.MDe;
-
 import java.util.HashMap;
-
 import org.codehaus.jettison.json.JSONObject;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
