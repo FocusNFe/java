@@ -1,5 +1,3 @@
-package v2.NFe;
-
 import java.util.HashMap;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
