@@ -30,8 +30,8 @@ public class autorizar {
 		
 		/* Aqui são criados as hash's que receberão os dados do CTe. */
 		HashMap<String, String> cte = new HashMap<String, String>();
-		HashMap<String, String> seguros_carga = new HashMap<String, String>();
-		HashMap<String, String> documentos_referenciados = new HashMap<String, String>();
+		HashMap<String, String> seguroCarga = new HashMap<String, String>();
+		HashMap<String, String> documentosReferenciados = new HashMap<String, String>();
    
 		cte.put("bairro_emitente","Sao Cristova");
 		cte.put("bairro_tomador","Bacacheri");
@@ -89,23 +89,23 @@ public class autorizar {
 		cte.put("valor_receber","1.00");
 		cte.put("valor_total","1.00");
 		cte.put("valor_total_tributos","0.00");
-		seguros_carga.put("nome_seguradora","Nome da seguradora aqui");
-		seguros_carga.put("numero_apolice","12345");
-		seguros_carga.put("responsavel_seguro","4");
-		documentos_referenciados.put("data_emissao","2018-06-18");
-		documentos_referenciados.put("numero","1");
-		documentos_referenciados.put("serie","1");
-		documentos_referenciados.put("subserie","1");
-		documentos_referenciados.put("valor","1.00");
+		segurosCarga.put("nome_seguradora","Nome da seguradora aqui");
+		segurosCarga.put("numero_apolice","12345");
+		segurosCarga.put("responsavel_seguro","4");
+		documentosReferenciados.put("data_emissao","2018-06-18");
+		documentosReferenciados.put("numero","1");
+		documentosReferenciados.put("serie","1");
+		documentosReferenciados.put("subserie","1");
+		documentosReferenciados.put("valor","1.00");
 		
 		/* Depois de fazer o input dos dados, são criados os objetos JSON já com os valores das hash's. */
 		JSONObject json = new JSONObject (cte);
-		JSONObject JsonSeguros_carga = new JSONObject (seguros_carga);
-		JSONObject JsonDocumentos_referenciados = new JSONObject (documentos_referenciados);
+		JSONObject jsonSegurosCarga = new JSONObject (segurosCarga);
+		JSONObject jsonDocumentosReferenciados = new JSONObject (documentosReferenciados);
 		
 		/* Aqui adicionamos os objetos JSON nos campos da API como array no JSON principal. */
-		json.append("seguros_carga", JsonSeguros_carga);
-		json.append("documentos_referenciados", JsonDocumentos_referenciados);
+		json.append("segurosCarga", jsonSegurosCarga);
+		json.append("documentosReferenciados", jsonDocumentosReferenciados);
 
 		/* É recomendado verificar como os dados foram gerados em JSON e se ele está seguindo a estrutura especificada em nossa documentação.*/
 		//System.out.print(json); 
@@ -114,14 +114,14 @@ public class autorizar {
 
 		ClientResponse resposta = request.post(ClientResponse.class, json);
 
-		int HttpCode = resposta.getStatus(); 
+		int httpCode = resposta.getStatus(); 
 
 		String body = resposta.getEntity(String.class);
 		
 		/* As três linhas a seguir exibem as informações retornadas pela nossa API. 
 		 * Aqui o seu sistema deverá interpretar e lidar com o retorno. */
 		System.out.print("HTTP Code: ");
-		System.out.print(HttpCode);
+		System.out.print(httpCode);
 		System.out.printf(body);
 	}
 }

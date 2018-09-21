@@ -21,16 +21,16 @@ public class inutilizar {
  		String url = server.concat("v2/cte/inutilizacao");
  		
  		/* Aqui criamos um hash que irá receber as chaves e valores esperados para gerar a inutilização. */
-		HashMap<String, String> DadosInutilizacao = new HashMap<String, String>();
-		DadosInutilizacao.put("cnpj", "51916585000125");
-		DadosInutilizacao.put("serie", "1");
-		DadosInutilizacao.put("numero_inicial", "1");
-		DadosInutilizacao.put("numero_final", "3");
-		DadosInutilizacao.put("justificativa", "Informe aqui a justificativa para realizar a inutilizacao da numeracao.");
-		DadosInutilizacao.put("modelo", "67");
+		HashMap<String, String> dadosInutilizacao = new HashMap<String, String>();
+		dadosInutilizacao.put("cnpj", "51916585000125");
+		dadosInutilizacao.put("serie", "1");
+		dadosInutilizacao.put("numero_inicial", "1");
+		dadosInutilizacao.put("numero_final", "3");
+		dadosInutilizacao.put("justificativa", "Informe aqui a justificativa para realizar a inutilizacao da numeracao.");
+		dadosInutilizacao.put("modelo", "67");
 		
 		/* Criamos um objeto JSON que irá receber o input dos dados, para então enviar a requisição. */
-		JSONObject json = new JSONObject (DadosInutilizacao);
+		JSONObject json = new JSONObject (dadosInutilizacao);
 		
 		/* Testar se o JSON gerado está dentro do formato esperado.
 		System.out.print(json); */
@@ -44,14 +44,14 @@ public class inutilizar {
 
 		ClientResponse resposta = request.post(ClientResponse.class, json);
 
-		int HttpCode = resposta.getStatus(); 
+		int httpCode = resposta.getStatus(); 
 
 		String body = resposta.getEntity(String.class);
 		
 		 /* As três linhas abaixo imprimem as informações retornadas pela API. 
 		  * Aqui o seu sistema deverá interpretar e lidar com o retorno. */
 		System.out.print("HTTP Code: ");
-		System.out.print(HttpCode);
+		System.out.print(httpCode);
 		System.out.printf(body); 
 	}
 }

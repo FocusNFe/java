@@ -17,10 +17,10 @@ public class manifestar {
 		/* Para ambiente de produção use a variável abaixo:
 		String server = "https://api.focusnfe.com.br/"; */
 		String server = "http://homologacao.acrasnfe.acras.com.br/";
-			String url = server.concat("v2/nfes_recebidas/"+chave+"/manifesto");
+		String url = server.concat("v2/nfes_recebidas/"+chave+"/manifesto");
 			
 		/* Aqui criamos um hashmap para receber a chave "tipo" e o valor que pode ser: ciencia, confirmacao, desconhecimento ou nao_realizada. */		
-		HashMap<String, String> TipoManifestacao = new HashMap<String, String>();
+		HashMap<String, String> tipoManifestacao = new HashMap<String, String>();
 		TipoManifestacao.put("tipo", "nao_realizada");
 		
 		/* Caso escolha o tipo "nao_realizada", é preciso informar o campo/chave "justificativa".
@@ -36,13 +36,13 @@ public class manifestar {
 
 		WebResource request =  client.resource(url);
 		ClientResponse resposta = request.post(ClientResponse.class, json);
-		int HttpCode = resposta.getStatus(); 
+		int httpCode = resposta.getStatus(); 
 		String body = resposta.getEntity(String.class);
 		
 		/* As três linhas abaixo imprimem as informações retornadas pela API. 
 		 * Aqui o seu sistema deverá interpretar e lidar com o retorno. */
 		System.out.print("HTTP Code: ");
-		System.out.print(HttpCode);
+		System.out.print(httpCode);
 		System.out.printf(body);
 	}
 }

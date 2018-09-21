@@ -74,13 +74,13 @@ public class Main {
 		formasPagamento.put("valor_pagamento", "1.0000");
 		
 		/* Depois de fazer o input dos dados, são criados os objetos JSON já com os valores das hash's. */
-		JSONObject json = new JSONObject (nfce);
-		JSONObject JsonItens = new JSONObject (itens);
-		JSONObject JsonPagamento = new JSONObject (formasPagamento);
+		JSONObject json = new JSONObject(nfce);
+		JSONObject jsonItens = new JSONObject(itens);
+		JSONObject jsonPagamento = new JSONObject(formasPagamento);
 		
 		/* Aqui adicionamos os objetos JSON nos campos da API como array no JSON principal. */
-		json.append("items", JsonItens);
-		json.append("formas_pagamento", JsonPagamento);
+		json.append("items", jsonItens);
+		json.append("formas_pagamento", jsonPagamento);
 
 		/* É recomendado verificar como os dados foram gerados em JSON e se ele está seguindo a estrutura especificada em nossa documentação.
 		System.out.print(json); */
@@ -89,14 +89,14 @@ public class Main {
 
 		ClientResponse resposta = requestpost(ClientResponse.class, json);
 
-		int HttpCode = resposta.getStatus(); 
+		int httpCode = resposta.getStatus(); 
 
 		String body = resposta.getEntity(String.class);
 
 		/* As três linhas a seguir exibem as informações retornadas pela nossa API. 
 		 * Aqui o seu sistema deverá interpretar e lidar com o retorno. */
 		System.out.print("HTTP Code: ");
-		System.out.print(HttpCode);
+		System.out.print(httpCode);
 		System.out.printf(body);
 	}
 }

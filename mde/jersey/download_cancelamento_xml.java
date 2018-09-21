@@ -15,7 +15,7 @@ public class download_cancelamento_xml {
 		/* Para ambiente de produção use a variável abaixo:
 		String server = "https://api.focusnfe.com.br/"; */
 		String server = "http://homologacao.acrasnfe.acras.com.br/";
-			String url = server.concat("v2/nfes_recebidas/"+chave+"/cancelamento.xml");
+		String url = server.concat("v2/nfes_recebidas/"+chave+"/cancelamento.xml");
 		
 		/* Configuração para realizar o HTTP BasicAuth. */
 		Object config = new DefaultClientConfig();
@@ -24,13 +24,13 @@ public class download_cancelamento_xml {
 
 		WebResource request =  client.resource(url);
 		ClientResponse resposta = request.get(ClientResponse.class);
-		int HttpCode = resposta.getStatus(); 
+		int httpCode = resposta.getStatus(); 
 		String body = resposta.getEntity(String.class);
 		
 		/* As três linhas abaixo imprimem as informações retornadas pela API. 
 		 * Aqui o seu sistema deverá interpretar e lidar com o retorno. */
 		System.out.print("HTTP Code: ");
-		System.out.print(HttpCode);
+		System.out.print(httpCode);
 		System.out.printf(body);
 	}
 }

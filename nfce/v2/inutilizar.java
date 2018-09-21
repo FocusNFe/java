@@ -23,15 +23,15 @@ public class NFCe_inutilizacao {
  		String url = server.concat("v2/nfce/inutilizacao");
 		
  		/* Aqui criamos um hash que irá receber as chaves e valores esperados para gerar a inutilização. */
-		HashMap<String, String> DadosInutilizacao = new HashMap<String, String>();
-		DadosInutilizacao.put("cnpj", "51916585009999");
-		DadosInutilizacao.put("serie", "9");
-		DadosInutilizacao.put("numero_inicial", "7730");
-		DadosInutilizacao.put("numero_final", "7732");
-		DadosInutilizacao.put("justificativa", "Informe aqui a justificativa para realizar a inutilizacao da numeracao.");
+		HashMap<String, String> dadosInutilizacao = new HashMap<String, String>();
+		dadosInutilizacao.put("cnpj", "51916585009999");
+		dadosInutilizacao.put("serie", "9");
+		dadosInutilizacao.put("numero_inicial", "7730");
+		dadosInutilizacao.put("numero_final", "7732");
+		dadosInutilizacao.put("justificativa", "Informe aqui a justificativa para realizar a inutilizacao da numeracao.");
 		
 		/* Criamos um objeto JSON que irá receber o input dos dados, para então enviar a requisição. */	
-		JSONObject json = new JSONObject (DadosInutilizacao);
+		JSONObject json = new JSONObject (dadosInutilizacao);
 		
 		/* Testar se o JSON gerado está dentro do formato esperado.
 		System.out.print(json); */
@@ -45,14 +45,14 @@ public class NFCe_inutilizacao {
 
 		ClientResponse resposta = request.post(ClientResponse.class, json);
 
-		int HttpCode = resposta.getStatus(); 
+		int httpCode = resposta.getStatus(); 
 
 		String body = resposta.getEntity(String.class);
 		
 	   /* As três linhas abaixo imprimem as informações retornadas pela API. 
 	    * Aqui o seu sistema deverá interpretar e lidar com o retorno. */
 		System.out.print("HTTP Code: ");
-		System.out.print(HttpCode);
+		System.out.print(httpCode);
 		System.out.printf(body); 
 	}
 }
