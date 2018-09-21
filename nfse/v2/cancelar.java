@@ -9,7 +9,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
-public class NFSe_cancelamento {
+public class NFSeCancelamento {
 
 	public static void main(String[] args){
 		

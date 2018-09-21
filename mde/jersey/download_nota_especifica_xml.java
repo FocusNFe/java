@@ -5,7 +5,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
-public class download_nota_especifica_xml {
+public class DownloadNotaEspecificaXml {
 
 	public static void main(String[] args) {
 		

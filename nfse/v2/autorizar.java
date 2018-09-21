@@ -10,7 +10,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
-public class NFSe_autorizar {
+public class NFSeAutorizar {
 
 	public static void main(String[] args) throws JSONException{
 		

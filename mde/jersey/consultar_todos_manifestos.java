@@ -5,7 +5,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
-public class consultar_todos_manifestos {
+public class ConsultarTodosManifestos {
 
 	public static void main(String[] args) {
 

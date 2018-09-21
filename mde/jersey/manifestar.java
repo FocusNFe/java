@@ -7,7 +7,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
-public class manifestar {
+public class Manifestar {
 
 	public static void main(String[] args) {
 		

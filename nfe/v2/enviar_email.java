@@ -8,7 +8,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
-public class NFe_envia_email {
+public class NFeEnviaEmail {
 
 	public static void main(String[] args) throws JSONException{
 		
