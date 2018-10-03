@@ -26,7 +26,7 @@ public class Main {
 		HashMap<String, String> nfse = new HashMap<String, String>();
 		HashMap<String, String> prestador = new HashMap<String, String>();
 		HashMap<String, String> tomador = new HashMap<String, String>();
-		HashMap<String, String> TomadorEndereco = new HashMap<String, String>();
+		HashMap<String, String> tomadorEndereco = new HashMap<String, String>();
 		HashMap<String, String> servico = new HashMap<String, String>();
 
 		nfse.put("data_emissao", "2017-08-30T10:50:00-03:00");
@@ -37,12 +37,12 @@ public class Main {
 		tomador.put("cpf", "51966818092");
 		tomador.put("razao_social", "ACME LTDA");
 		tomador.put("email", "email-do-tomador@google.com.br");
-		TomadorEndereco.put("bairro", "Jardim America");
-		TomadorEndereco.put("cep", "80000000");
-		TomadorEndereco.put("codigo_municipio", "4128104");
-		TomadorEndereco.put("logradouro", "Rua Paulo Centrone");
-		TomadorEndereco.put("numero", "168");
-		TomadorEndereco.put("uf", "PR");
+		tomadorEndereco.put("bairro", "Jardim America");
+		tomadorEndereco.put("cep", "80000000");
+		tomadorEndereco.put("codigo_municipio", "4128104");
+		tomadorEndereco.put("logradouro", "Rua Paulo Centrone");
+		tomadorEndereco.put("numero", "168");
+		tomadorEndereco.put("uf", "PR");
 		servico.put("discriminacao", "Teste de servico");
 		servico.put("aliquota", "3.00");
 		servico.put("base_calculo", "1.0");
@@ -55,16 +55,16 @@ public class Main {
 		
 		/* Depois de fazer o input dos dados, são criados os objetos JSON já com os valores das hash's. */
 		JSONObject json = new JSONObject (nfse);
-		JSONObject JsonPrestador = new JSONObject (prestador);
-		JSONObject JsonTomador = new JSONObject (tomador);
-		JSONObject JsonTomadorEndereco = new JSONObject (TomadorEndereco);
-		JSONObject JsonServico = new JSONObject (servico);
+		JSONObject jsonPrestador = new JSONObject (prestador);
+		JSONObject jsonTomador = new JSONObject (tomador);
+		JSONObject jsonTomadorEndereco = new JSONObject (tomadorEndereco);
+		JSONObject jsonServico = new JSONObject (servico);
 		
 		/* Aqui adicionamos os objetos JSON nos campos da API como array no JSON principal. */
-		json.accumulate("prestador", JsonPrestador);
-		json.accumulate("tomador", JsonTomador);
-		JsonTomador.accumulate("endereco", JsonTomadorEndereco);
-		json.accumulate("servico", JsonServico);
+		json.accumulate("prestador", jsonPrestador);
+		json.accumulate("tomador", jsonTomador);
+		jsonTomador.accumulate("endereco", jsonTomadorEndereco);
+		json.accumulate("servico", jsonServico);
 
 		/* É recomendado verificar como os dados foram gerados em JSON e se ele está seguindo a estrutura especificada em nossa documentação.
 		System.out.print(json); */

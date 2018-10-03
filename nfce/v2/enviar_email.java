@@ -10,7 +10,7 @@ import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
-public class NFCe_envia_email {
+public class NFCeEnviaEmail {
 
 	public static void main(String[] args) throws JSONException{
 		
@@ -27,11 +27,11 @@ public class NFCe_envia_email {
 		
 		/* Criamos o um objeto JSON que receberá um JSON Array com a lista de e-mails. */
 		JSONObject json = new JSONObject ();	
-		JSONArray ListaEmails = new JSONArray();
-		ListaEmails.put("email_01@acras.com.br");
-		ListaEmails.put("email_02@acras.com.br");
-		ListaEmails.put("email_03@acras.com.br");
-		json.put("emails", ListaEmails);	
+		JSONArray listaEmails = new JSONArray();
+		listaEmails.put("email_01@acras.com.br");
+		listaEmails.put("email_02@acras.com.br");
+		listaEmails.put("email_03@acras.com.br");
+		json.put("emails", listaEmails);	
 		
 		/* Testar se o JSON gerado está dentro do formato esperado.
 		System.out.print(json); */
@@ -45,14 +45,14 @@ public class NFCe_envia_email {
 
 		ClientResponse resposta = request.post(ClientResponse.class, json);
 
-		int HttpCode = resposta.getStatus(); 
+		int httpCode = resposta.getStatus(); 
 
 		String body = resposta.getEntity(String.class);
 		
 		/* As três linhas abaixo imprimem as informações retornadas pela API. 
 		 * Aqui o seu sistema deverá interpretar e lidar com o retorno. */
 		System.out.print("HTTP Code: ");
-		System.out.print(HttpCode);
+		System.out.print(httpCode);
 		System.out.printf(body); 
 	}
 }
