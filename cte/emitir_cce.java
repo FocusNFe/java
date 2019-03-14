@@ -18,7 +18,7 @@ public class EmitirCce {
 		
 		/* Para ambiente de produção use a variável abaixo:
 		String server = "https://api.focusnfe.com.br/"; */
-		String server = "http://homologacao.acrasnfe.acras.com.br/";
+		String server = "https://homologacao.focusnfe.com.br/";
 		
 		String url = server.concat("v2/cte/"+ref+"/carta_correcao");
 
